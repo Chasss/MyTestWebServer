@@ -9,10 +9,10 @@
 #include <errno.h>
 #include <sys/socket.h>
 #include <algorithm>
-class HttpRequest 
+class HttpRequest
 {
 public:
-/*
+    /*
      enum PARSE_STATE 
      {
         REQUEST_LINE,
@@ -42,13 +42,11 @@ public:
     std::string version() const;
     std::string param() const;
     std::string path() const;
-    std::string& path();
+    std::string &path();
     std::string body() const;
 
-
-
 private:
-/*
+    /*
     bool ParseRequestLine_(const std::string& line);
     void ParseHeader_(const std::string& line);
     void ParseBody_(const std::string& line);
@@ -68,6 +66,5 @@ private:
     //static const std::unordered_map<std::string, int> DEFAULT_HTML_TAG;
     //static int ConverHex(char ch);
 };
-
 
 #endif //HTTP_REQUEST_H
