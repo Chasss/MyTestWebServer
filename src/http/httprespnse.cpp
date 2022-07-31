@@ -56,7 +56,7 @@ void HttpResponse::execute_cgi()
 	pid_t pid;
 	int status;
 
-	int i;
+	size_t i;
 	char c;
 
 	//int numchars = 1;
@@ -101,7 +101,7 @@ void HttpResponse::execute_cgi()
 		else
 		{	/* POST */
 			//存储CONTENT_LENGTH
-			sprintf(length_env, "CONTENT_LENGTH=%d", body_.size());
+			sprintf(length_env, "CONTENT_LENGTH=%zd", body_.size());
 			putenv(length_env);
 		}
 		string filename = srcDir_ + path_;
@@ -114,7 +114,7 @@ void HttpResponse::execute_cgi()
 		close(cgi_input[0]);
 		if (method_ == "POST")
 		{
-			for (i = 0; i < body_.size(); i++)
+			for (i = 0; i < body_.size(); ++i)
 			{
 				write(cgi_input[1], &body_[i], 1);
 			}
