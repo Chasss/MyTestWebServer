@@ -42,7 +42,7 @@
 │   │   ├── httpconn.h
 │   │   ├── httprequest.cpp
 │   │   ├── httprequest.h
-│   │   ├── httprespnse.cpp
+│   │   ├── httpresponse.cpp
 │   │   └── httpresponse.h
 │   ├── server
 │   │   ├── webserver.cpp
@@ -66,7 +66,7 @@ sudo chmod +X post.cgi
 * 编译运行
 ```C++
 make
-./bin/webserver
+./bin/server
 ```
 
 ## 一些学习过程
